@@ -1,0 +1,15 @@
+<!-- app/views/school_years/index.html.erb -->
+
+<h1>School Years</h1>
+
+<%= link_to "Create New School Year", new_school_year_path %>
+
+<ul>
+  <% @school_years.each do |school_year| %>
+    <li>
+      <%= link_to school_year.name, school_year_path(school_year) %> |
+      <%= link_to "Edit", edit_school_year_path(school_year) %> |
+      <%= link_to "Delete", school_year_path(school_year), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>

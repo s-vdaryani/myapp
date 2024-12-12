@@ -1,0 +1,17 @@
+<!-- app/views/lists/_form.html.erb -->
+
+<%= form_with model: [@school_year, @list], local: true do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div>
+    <%= form.label :list_number %>
+    <%= form.number_field :list_number %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

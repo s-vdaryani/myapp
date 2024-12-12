@@ -1,0 +1,7 @@
+<!-- app/views/lists/new.html.erb -->
+
+<h1>New List for <%= @school_year.name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to "Back to Lists", school_year_lists_path(@school_year) %>

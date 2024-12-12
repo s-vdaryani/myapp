@@ -1,0 +1,21 @@
+<!-- app/views/school_years/show.html.erb -->
+
+<h1><%= @school_year.name %></h1>
+<p>Start Date: <%= @school_year.start_date %></p>
+<p>End Date: <%= @school_year.end_date %></p>
+
+<h2>Lists for <%= @school_year.name %></h2>
+
+<%= link_to "Create New List", new_school_year_list_path(@school_year) %>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= link_to list.name, school_year_list_path(@school_year, list) %> |
+      <%= link_to "Edit", edit_school_year_list_path(@school_year, list) %> |
+      <%= link_to "Delete", school_year_list_path(@school_year, list), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to School Years", school_years_path %>

@@ -1,0 +1,19 @@
+<!-- app/views/lists/show.html.erb -->
+
+<h1><%= @list.name %></h1>
+<p>List Number: <%= @list.list_number %></p>
+
+<h2>Tasks</h2>
+<%= link_to "Create New Task", new_school_year_list_task_path(@school_year, @list) %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.title, school_year_list_task_path(@school_year, @list, task) %> |
+      <%= link_to "Edit", edit_school_year_list_task_path(@school_year, @list, task) %> |
+      <%= link_to "Delete", school_year_list_task_path(@school_year, @list, task), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to Lists", school_year_lists_path(@school_year) %>

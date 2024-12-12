@@ -1,0 +1,8 @@
+<h1><%= @task.title %></h1>
+<p>Description: <%= @task.description %></p>
+<p>Class: <%= @task.class_name %></p>
+<p>Due Date: <%= @task.due_date %></p>
+<p>Completed: <%= @task.completed ? "Yes" : "No" %></p>
+
+<%= link_to "Edit Task", edit_school_year_list_task_path(@school_year, @list, @task) %> |
+<%= link_to "Back to Tasks", school_year_list_tasks_path(@school_year, @list) %>

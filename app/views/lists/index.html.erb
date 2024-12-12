@@ -1,0 +1,16 @@
+<h1>Tasks for <%= @list.name %> in <%= @school_year.name %></h1>
+
+<%= link_to "Create New Task", new_school_year_list_task_path(@school_year, @list) %>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.title, school_year_list_task_path(@school_year, @list, task) %> |
+      Due: <%= task.due_date %> |
+      <%= link_to "Edit", edit_school_year_list_task_path(@school_year, @list, task) %> |
+      <%= link_to "Delete", school_year_list_task_path(@school_year, @list, task), method: :delete, data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to Lists", school_year_lists_path(@school_year) %>

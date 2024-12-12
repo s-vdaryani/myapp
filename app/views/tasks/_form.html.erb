@@ -1,0 +1,26 @@
+<%= form_with model: [@school_year, @list, @task], local: true do |form| %>
+    <div>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </div>
+    <div>
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+    <div>
+      <%= form.label :class_name %>
+      <%= form.text_field :class_name %>
+    </div>
+    <div>
+      <%= form.label :due_date %>
+      <%= form.date_field :due_date %>
+    </div>
+    <div>
+      <%= form.label :completed %>
+      <%= form.check_box :completed %>
+    </div>
+    <div>
+      <%= form.submit %>
+    </div>
+  <% end %>
+  
